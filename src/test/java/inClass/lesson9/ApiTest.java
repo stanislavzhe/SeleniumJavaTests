@@ -49,9 +49,9 @@ public class ApiTest {
     public void apiTest() {
         RestAssured.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").
                 thenReturn().body().prettyPrint();
-//        String json =  RestAssured.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").
-//                thenReturn().asString();
-//        System.out.println(json);
+        String json =  RestAssured.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").
+                thenReturn().asString();
+        System.out.println(json);
 
         ObjectMapper mapper = new ObjectMapper();
 
