@@ -28,11 +28,12 @@ public class ConverterTest {
 
     @Test
     public void checkConverterBla() throws InterruptedException {
+        String bankName = "НБУ";
         double expectedAmountFieldValue = 100;
         ConverterPage converterPage = new ConverterPage(driver);
         converterPage.clearCurrencyAmountField().enterCurrencyAmount(String.valueOf(expectedAmountFieldValue));
         converterPage.setConverterCurrency(ConverterPage.Currency.UAH);
-        converterPage.setConverterBank("НБУ");
+        converterPage.setConverterBank(bankName);
 
         double actualAmountFieldValue = converterPage.currencyAmountFieldValue();
         double actualRateUSDValue = converterPage.currencyRateUSDValue();
