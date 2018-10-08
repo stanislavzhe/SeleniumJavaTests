@@ -17,12 +17,23 @@ public class weatherAPITest {
 //    2. В качестве группы тестов/теста добавить сравнение полученных данных с weather.com
 //    (для получения данных с сайта использовать selenium)
 //    3. Сравнить температуру воздуха из API и на сайте
+//{
+//    "id": 703448,
+//        "name": "Kiev",
+//        "country": "UA",
+//        "coord": {
+//    "lon": 30.516666,
+//            "lat": 50.433334
+//}
+//},
 
     @Test
     public void apiTest() {
         RestAssured.given().
-                param("id", "2643743").
+                param("id", "703448").
                 param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
+                param("units", "metric").
+                param("lang", "ru").
                 get("https://api.openweathermap.org/data/2.5/weather").
                 body().
                 prettyPrint();
