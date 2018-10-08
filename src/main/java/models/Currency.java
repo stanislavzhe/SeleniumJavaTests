@@ -62,4 +62,14 @@ public class Currency {
     public void setSale(String sale) {
         this.sale = sale;
     }
+
+    @Override
+    public String toString() {
+        return "Currency{" +
+                "ccy='" + ccy + '\'' +
+                ", base_ccy='" + base_ccy + '\'' +
+                ", buy='" + buy + '\'' +
+                ", sale='" + sale + '\'' +
+                '}';
+    }
 }

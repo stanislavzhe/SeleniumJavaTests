@@ -20,7 +20,7 @@ public class ConverterTest {
 
     @BeforeMethod
     public void init() {
-        System.setProperty("webdriver.chrome.driver", "D:\\megogoTest\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\megogoTest\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://finance.i.ua/converter/");
