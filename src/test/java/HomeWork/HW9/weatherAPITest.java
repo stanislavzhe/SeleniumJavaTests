@@ -17,7 +17,6 @@ public class weatherAPITest {
 //    2. В качестве группы тестов/теста добавить сравнение полученных данных с weather.com
 //    (для получения данных с сайта использовать selenium)
 //    3. Сравнить температуру воздуха из API и на сайте
-//    test for git
 
     @Test
     public void apiTest() {
