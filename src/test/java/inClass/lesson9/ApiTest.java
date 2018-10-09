@@ -45,6 +45,7 @@ public class ApiTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void apiTest() {
         RestAssured.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").
@@ -58,7 +59,8 @@ public class ApiTest {
         try {
             String jsonInString = RestAssured.get("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5").
                     thenReturn().asString();
-            List<Currency> currencyList = mapper.readValue(jsonInString, new TypeReference<List<Currency>>(){});
+            List<Currency> currencyList = mapper.readValue(jsonInString, new TypeReference<List<Currency>>() {
+            });
             System.out.println(currencyList);
             System.out.println(currencyList.size());
             System.out.println(currencyList.get(0).toString());
@@ -73,6 +75,5 @@ public class ApiTest {
             e.printStackTrace();
         }
     }
-
 }
 

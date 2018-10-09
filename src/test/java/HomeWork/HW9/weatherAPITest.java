@@ -1,12 +1,25 @@
 package HomeWork.HW9;
 
+import WeatherPages.HomePage;
 import com.jayway.restassured.RestAssured;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
  * Created by Stas on 07.10.2018.
  */
 public class weatherAPITest {
+    public WebDriver driver;
+    private static final String cityName = "Kyiv";
+    private static final int timeouts = 15;
+
+
 //    Задание протестировать endpoint по ссылке:
 //    https://www.openweathermap.org/current
 //    Использовать API_KEY для параметра: d487dc4d1e75e13db4a4e0b2122e7a99
@@ -27,15 +40,50 @@ public class weatherAPITest {
 //}
 //},
 
+    @BeforeMethod
+    public void init() {
+        System.setProperty("webdriver.chrome.driver", "E:\\megogoTest\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://weather.com/");
+    }
+
     @Test
-    public void apiTest() {
-        RestAssured.given().
-                param("id", "703448").
-                param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
-                param("units", "metric").
-                param("lang", "ru").
-                get("https://api.openweathermap.org/data/2.5/weather").
-                body().
-                prettyPrint();
+    public void apiTest() throws InterruptedException {
+//        RestAssured.given().
+//                param("id", "703448").
+//                param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
+//                param("units", "metric").
+//                param("lang", "ru").
+//                get("https://api.openweathermap.org/data/2.5/weather").
+//                body().
+//                prettyPrint();
+        HomePage homePage = new HomePage(driver);
+        elementVisible(homePage.findMeSectionElement());
+        homePage.typeCityFiled(cityName);
+        Thread.sleep(5000);
+        elementVisible(homePage.searchResultsTextElement());
+        Thread.sleep(5000);
+//        homePage.loaderSectionNotShown(timeouts);
+        elementClickable(homePage.firstResultElement());
+        homePage.clickOnFirstResultContainsKyiv();
+
+
+    }
+
+    @AfterMethod()
+    public void close() {
+//        driver.close();
+    }
+
+
+    private void elementVisible(WebElement element) {
+        new WebDriverWait(driver, timeouts).
+                until(ExpectedConditions.visibilityOf(element));
+    }
+
+    private void elementClickable(WebElement element) {
+        new WebDriverWait(driver, timeouts).
+                until(ExpectedConditions.elementToBeClickable(element));
     }
 }
