@@ -2,6 +2,7 @@ package HomeWork.HW8;
 
 import HomeWork.HW7.TestLesson7;
 import data.RegistrationPageDataProvider;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
@@ -10,9 +11,10 @@ import pages.NavigationPage;
 /**
  * Created by Stas on 06.10.2018.
  */
-public class loginSectionTests extends TestLesson7{
+public class LoginSectionTests extends TestLesson7{
+    public WebDriver driver;
 
-    @Test(dataProvider = "registerNewUser", dataProviderClass = RegistrationPageDataProvider.class)
+    @Test(groups = "smoke", dataProvider = "registerNewUser", dataProviderClass = RegistrationPageDataProvider.class)
     public void loginWithIncorrectCredentials(String email, String pass, String message) {
 //      параметры метода которые нам "прилетают" из registerNewUser() метода из Registration DataProvider класса
         NavigationPage navigationPage = new NavigationPage(driver);

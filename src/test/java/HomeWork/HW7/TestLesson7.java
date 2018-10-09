@@ -15,7 +15,7 @@ import java.util.Date;
 
 public class TestLesson7 {
 
-    protected WebDriver driver;
+    public WebDriver driver;
     private static String emailAuthPage = "ab@abc.com";
     private static final String customersFirstName = "Stas";
     private static final String customersLastName = "Zheleznov";

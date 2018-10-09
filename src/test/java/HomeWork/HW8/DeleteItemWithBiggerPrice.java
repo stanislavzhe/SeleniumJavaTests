@@ -1,15 +1,17 @@
 package HomeWork.HW8;
 
 import HomeWork.HW7.TestLesson7;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.CartPageSummary;
 import pages.CategoryPage;
 import pages.ProductAddedToCart;
 import pages.TopMenuNavigation;
 
-public class deleteItemWithBiggerPrice extends TestLesson7 {
+public class DeleteItemWithBiggerPrice extends TestLesson7 {
+    public WebDriver driver;
 
-    @Test
+    @Test(groups = {"smoke","regression"})
     public void checkDeleteItem() {
         double startPointPrice = 25;
         double endPointPrice = 45;
