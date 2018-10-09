@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "name",
     "cod"
 })
-public class MegogoTest {
+public class APITestObject {
 
     @JsonProperty("coord")
     private Coord coord;

@@ -1,6 +1,8 @@
 package HomeWork.HW9;
 
-import WeatherPages.HomePage;
+import HW9Objects.APITestObject;
+import WeatherPages.BottomMenu;
+import WeatherPages.CityPage;
 import com.jayway.restassured.RestAssured;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +19,7 @@ import org.testng.annotations.Test;
 public class weatherAPITest {
     public WebDriver driver;
     private static final String cityName = "Kyiv";
-    private static final int timeouts = 15;
+    private static final int timeouts = 10;
 
 
 //    Задание протестировать endpoint по ссылке:
@@ -50,25 +52,34 @@ public class weatherAPITest {
 
     @Test
     public void apiTest() throws InterruptedException {
-//        RestAssured.given().
-//                param("id", "703448").
-//                param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
-//                param("units", "metric").
-//                param("lang", "ru").
-//                get("https://api.openweathermap.org/data/2.5/weather").
-//                body().
-//                prettyPrint();
-        HomePage homePage = new HomePage(driver);
-        elementVisible(homePage.findMeSectionElement());
-        homePage.typeCityFiled(cityName);
-        Thread.sleep(5000);
-        elementVisible(homePage.searchResultsTextElement());
-        Thread.sleep(5000);
-//        homePage.loaderSectionNotShown(timeouts);
-        elementClickable(homePage.firstResultElement());
-        homePage.clickOnFirstResultContainsKyiv();
+        RestAssured.given().
+                param("id", "703448").
+                param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
+                param("units", "metric").
+                param("lang", "ru").
+                get("https://api.openweathermap.org/data/2.5/weather").
+                body().
+                prettyPrint();
+        APITestObject apiTestObject = RestAssured.given().
+                param("id", "703448").
+                param("appid", "d487dc4d1e75e13db4a4e0b2122e7a99").
+                param("units", "metric").
+                param("lang", "ru").
+                get("https://api.openweathermap.org/data/2.5/weather").
+                as(APITestObject.class);
+        System.out.println(apiTestObject.getName());
+        System.out.println(apiTestObject.getMain().getTemp());
 
-
+        BottomMenu bottomMenu = new BottomMenu(driver);
+        elementVisible(bottomMenu.findMeSectionElement());
+        bottomMenu.typeCityFiled(cityName);
+        elementVisible(bottomMenu.searchResultsTextElement());
+        Thread.sleep(5000);
+        bottomMenu.clickOnFirstResultContainsKyiv();
+        elementVisible(bottomMenu.findMeSectionElement());
+        CityPage cityPage = new CityPage(driver);
+        System.out.println(cityPage.getCityTitle());
+        System.out.println(cityPage.getTemperature());
     }
 
     @AfterMethod()

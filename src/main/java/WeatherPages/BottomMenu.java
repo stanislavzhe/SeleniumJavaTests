@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class HomePage {
+public class BottomMenu {
     private WebDriver driver;
 
     @FindBy(xpath = "//*[@class='theme__inputElement__4bZUj input__inputElement__1GjGE']")
@@ -21,10 +21,10 @@ public class HomePage {
     private List<WebElement> searchResultsWithKyivText;
     @FindBy(xpath = "//*[@class='styles__findMeButton__2lM4b styles__findMeButton__2SE4S js-onboarding__find-me']")
     private WebElement findMeSection;
-    @FindBy(xpath = "//*[@class='theme__linear__3vxHj progress__linear__38esV theme__indeterminate__1gPzb']")
+    @FindBy(xpath = "//*[@data-react-toolbox']='progress-bar']")
     private WebElement loaderIcon;
 
-    public HomePage(WebDriver driver) {
+    public BottomMenu(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
@@ -51,8 +51,8 @@ public class HomePage {
 
     public void loaderSectionNotShown(int timeout) {
         new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(By.
-                        xpath("//*[@class='theme__linear__3vxHj progress__linear__38esV theme__indeterminate__1gPzb']")));
+                        xpath("//*[@data-react-toolbox']='progress-bar']")));
         new WebDriverWait(driver, timeout).until(ExpectedConditions.invisibilityOfElementLocated(By.
-                        xpath("//*[@class='theme__linear__3vxHj progress__linear__38esV theme__indeterminate__1gPzb']")));
+                        xpath("//*[@data-react-toolbox']='progress-bar']")));
     }
 }
