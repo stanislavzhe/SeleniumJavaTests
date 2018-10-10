@@ -12,9 +12,8 @@ import pages.MenuNavigation;
  * Created by Stas on 06.10.2018.
  */
 public class LoginSectionTests extends BaseTest {
-    public WebDriver driver;
 
-    @Test(groups = "smoke", dataProvider = "registerNewUser", dataProviderClass = RegistrationPageDataProvider.class)
+    @Test(groups = {"smoke","negative"}, dataProvider = "registerNewUser", dataProviderClass = RegistrationPageDataProvider.class)
     public void loginWithIncorrectCredentials(String email, String pass, String message) {
 //      параметры метода которые нам "прилетают" из registerNewUser() метода из Registration DataProvider класса
         MenuNavigation menuNavigation = new MenuNavigation(driver);

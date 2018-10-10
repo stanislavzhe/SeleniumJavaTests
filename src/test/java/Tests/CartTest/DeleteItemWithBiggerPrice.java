@@ -1,5 +1,6 @@
 package Tests.CartTest;
 
+import Tests.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.CartPageSummary;
@@ -7,10 +8,9 @@ import pages.CategoryPage;
 import pages.MenuNavigation;
 import pages.ProductAddedToCart;
 
-public class DeleteItemWithBiggerPrice extends AddressInfoCheck {
-    public WebDriver driver;
+public class DeleteItemWithBiggerPrice extends BaseTest {
 
-    @Test(groups = {"smoke","regression"})
+    @Test(groups = {"smoke","regression","positive"})
     public void checkDeleteItem() {
         double startPointPrice = 25;
         double endPointPrice = 45;

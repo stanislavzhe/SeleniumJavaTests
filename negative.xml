@@ -11,6 +11,7 @@
         <classes>
             <class name="Tests.Catalog.FindItem"/>
             <class name="Tests.CreateAccount.CreateAccount"/>
+            <class name="Tests.Login.LoginSectionTests"/>
         </classes>
     </test>
 </suite>
