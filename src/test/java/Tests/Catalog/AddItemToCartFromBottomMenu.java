@@ -19,7 +19,7 @@ public class AddItemToCartFromBottomMenu extends BaseTest{
     }
 
     @Test
-    public void verifyThatProductPriceDiplayInDemoSection() throws InterruptedException {
+    public void verifyThatProductPriceDisplayInDemoSection() throws InterruptedException {
         String expectedPrice = "$27.00";
         MenuNavigation menuNavigation = new MenuNavigation(driver);
         menuNavigation.inputIntoSearchField("Blouse");

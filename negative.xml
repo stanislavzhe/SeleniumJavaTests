@@ -10,7 +10,7 @@
         </groups>
         <classes>
             <class name="Tests.Catalog.FindItem"/>
-            <class name="Tests.CreateAccount.CreateAccountNotAllRequiredFields"/>
+            <class name="Tests.CreateAccount.CreateAccount"/>
         </classes>
     </test>
 </suite>
