@@ -11,7 +11,8 @@ public class FindItem extends BaseTest{
     public void findValidItem() throws InterruptedException {
         MenuNavigation menuNavigation = new MenuNavigation(driver);
         menuNavigation.inputIntoSearchField("Blouse");
-        Thread.sleep(5000);
+        menuNavigation.clickToSubmitSearch();
+        Thread.sleep(2000);
 
     }
 
@@ -19,7 +20,8 @@ public class FindItem extends BaseTest{
     public void findNonValidItem() throws InterruptedException {
         MenuNavigation menuNavigation = new MenuNavigation(driver);
         menuNavigation.inputIntoSearchField("MacBook");
-        Thread.sleep(5000);
+        menuNavigation.clickToSubmitSearch();
+        Thread.sleep(2000);
 
     }
 }

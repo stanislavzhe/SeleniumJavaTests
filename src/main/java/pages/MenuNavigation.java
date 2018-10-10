@@ -1,14 +1,12 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MenuNavigation {
-    private WebDriver driver;
-
+    WebDriver driver;
 
     @FindBy(className = "header_user_info")
     private WebElement singInButton;
@@ -23,8 +21,7 @@ public class MenuNavigation {
     @FindBy(id = "search_query_top")
     private WebElement searchField;
     @FindBy(name = "submit_search")
-    private WebElement submitButton;
-
+    private WebElement submitSearchButton;
 
     public MenuNavigation(WebDriver driver) {
         this.driver = driver;
@@ -58,8 +55,9 @@ public class MenuNavigation {
     public void inputIntoSearchField(String name) {
         searchField.sendKeys(name);
     }
-    public void clickToSubmit() {
-        submitButton.click();
+
+    public void clickToSubmitSearch() {
+        submitSearchButton.click();
     }
 }
 

@@ -1,5 +1,6 @@
 package pages;
 
+import org.omg.PortableInterceptor.ACTIVE;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,150 +10,173 @@ import org.openqa.selenium.support.ui.Select;
 public class AccountCreationPage {
     private WebDriver driver;
 
-    public AccountCreationPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
-    }
-
     @FindBy(id = "id_gender1")
     private WebElement genderMrRadioButton;
+    @FindBy(id = "customer_firstname")
+    private WebElement customersFirstNameField;
+    @FindBy(id = "customer_lastname")
+    private WebElement cusomersLastNameField;
+    @FindBy(id = "passwd")
+    private WebElement passwordField;
+    @FindBy(id = "newsletter")
+    private WebElement newsletterCheckBox;
+    @FindBy(id = "optin")
+    private WebElement specialOffersCheckbox;
+    @FindBy(id = "firstname")
+    private WebElement addressSectionFirstNameField;
+    @FindBy(id = "lastname")
+    private WebElement addressSectionLastNameField;
+    @FindBy(id = "company")
+    private WebElement companyField;
+    @FindBy(id = "address1")
+    private WebElement addressField;
+    @FindBy(id = "city")
+    private WebElement cityFiled;
+    @FindBy(id = "postcode")
+    private WebElement zipcodeField;
+    @FindBy(id = "other")
+    private WebElement additionalInfoField;
+    @FindBy(id = "phone")
+    private WebElement phoneField;
+    @FindBy(id = "phone_mobile")
+    private WebElement mobilePhoneField;
+    @FindBy(id = "alias")
+    private WebElement addressAliasField;
+    @FindBy(id = "days")
+    private WebElement daySelect;
+    @FindBy(id = "months")
+    private WebElement monthSelect;
+    @FindBy(id = "years")
+    private WebElement yearSelect;
+    @FindBy(id = "id_state")
+    private WebElement stateSelect;
+    @FindBy(id = "id_country")
+    private WebElement countrySelect;
+    @FindBy(id = "submitAccount")
+    private WebElement registerButton;
+
+    public AccountCreationPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
     public WebElement getGenderMrRadioButton() {
         return genderMrRadioButton;
     }
-    public void selectMrGender() {
+
+    public AccountCreationPage selectMrGender() {
         genderMrRadioButton.click();
+        return this;
     }
 
-    @FindBy(id = "customer_firstname")
-    private WebElement customersFirstNameField;
-    public void typeCustomersFirstName(String customersFirstName) {
+    public AccountCreationPage typeCustomersFirstName(String customersFirstName) {
         customersFirstNameField.sendKeys(customersFirstName);
+        return this;
     }
 
-    @FindBy(id = "customer_lastname")
-    private WebElement cusomersLastNameField;
-    public void typeCustomersLastName(String customersLastNamestName) {
+    public AccountCreationPage typeCustomersLastName(String customersLastNamestName) {
         cusomersLastNameField.sendKeys(customersLastNamestName);
+        return this;
     }
 
-    @FindBy(id = "passwd")
-    private WebElement passwordField;
-    public void typePassword(String password) {
+    public AccountCreationPage typePassword(String password) {
         passwordField.sendKeys(password);
+        return this;
     }
 
-    @FindBy(id = "newsletter")
-    private WebElement newsletterCheckBox;
-    public void typeNewlettersCheckbox() {
+    public AccountCreationPage clickOnNewlettersCheckbox() {
         newsletterCheckBox.click();
+        return this;
     }
 
-    @FindBy(id = "optin")
-    private WebElement specialOffersCheckbox;
-    public void typeSpecialOffersCheckbox() {
+    public AccountCreationPage clickOnSpecialOffersCheckbox() {
         specialOffersCheckbox.click();
+        return this;
     }
 
-    @FindBy(id = "firstname")
-    private WebElement addressSectionFirstNameField;
-    public void typeFirstNameAddressSection(String firstNameAddressSection) {
+    public AccountCreationPage typeFirstNameAddressSection(String firstNameAddressSection) {
         addressSectionFirstNameField.clear();
         addressSectionFirstNameField.sendKeys(firstNameAddressSection);
+        return this;
     }
 
-    @FindBy(id = "lastname")
-    private WebElement addressSectionLastNameField;
-    public void typeLastNameAddressSection(String lastNameAddressSection) {
+    public AccountCreationPage typeLastNameAddressSection(String lastNameAddressSection) {
         addressSectionLastNameField.clear();
         addressSectionLastNameField.sendKeys(lastNameAddressSection);
+        return this;
     }
 
-    @FindBy(id = "company")
-    private WebElement companyField;
-    public void typeCompanyName(String companyName) {
+    public AccountCreationPage typeCompanyName(String companyName) {
         companyField.sendKeys(companyName);
+        return this;
     }
 
-    @FindBy(id = "address1")
-    private WebElement addressField;
-    public void typeAddress(String address) {
+    public AccountCreationPage typeAddress(String address) {
         addressField.sendKeys(address);
+        return this;
     }
 
-    @FindBy(id = "city")
-    private WebElement cityFiled;
-    public void typeCity(String city) {
+    public AccountCreationPage typeCity(String city) {
         cityFiled.sendKeys(city);
+        return this;
     }
 
-    @FindBy(id = "postcode")
-    private WebElement zipcodeField;
-    public void typeZipcode(String zipcode) {
+    public AccountCreationPage typeZipcode(String zipcode) {
         zipcodeField.sendKeys(zipcode);
+        return this;
     }
 
-    @FindBy(id = "other")
-    private WebElement additionalInfoField;
-    public void typeAdditionalInfo(String additionalInfo) {
+    public AccountCreationPage typeAdditionalInfo(String additionalInfo) {
         additionalInfoField.sendKeys(additionalInfo);
+        return this;
     }
 
-    @FindBy(id = "phone")
-    private WebElement phoneField;
-    public void typePhone(String phone) {
+    public AccountCreationPage typePhone(String phone) {
         phoneField.sendKeys(phone);
+        return this;
     }
 
-    @FindBy(id = "phone_mobile")
-    private WebElement mobilePhoneField;
-    public void typeMobilePhone(String mobilePhone) {
+    public AccountCreationPage typeMobilePhone(String mobilePhone) {
         mobilePhoneField.sendKeys(mobilePhone);
+        return this;
     }
 
-    @FindBy(id = "alias")
-    private WebElement addressAliasField;
-    public void typeAddressAlias(String addressAlias) {
+    public AccountCreationPage typeAddressAlias(String addressAlias) {
         addressAliasField.clear();
         addressAliasField.sendKeys(addressAlias);
+        return this;
     }
 
-    @FindBy(id = "days")
-    private WebElement daySelect;
-    public void selectDay(String elementValue) {
+    public AccountCreationPage selectDay(String elementValue) {
         Select dayFormValue = new Select(daySelect);
         dayFormValue.selectByValue(elementValue);
+        return this;
     }
 
-    @FindBy(id = "months")
-    private WebElement monthSelect;
-    public void selectMonth(String elementValue) {
+    public AccountCreationPage selectMonth(String elementValue) {
         Select montFormValue = new Select(monthSelect);
         montFormValue.selectByValue(elementValue);
+        return this;
     }
 
-    @FindBy(id = "years")
-    private WebElement yearSelect;
-    public void selectYear(String elementValue) {
+    public AccountCreationPage selectYear(String elementValue) {
         Select yearFormValue = new Select(yearSelect);
         yearFormValue.selectByValue(elementValue);
+        return this;
     }
 
-    @FindBy(id = "id_state")
-    private WebElement stateSelect;
-    public void selectState(String elementValue) {
+    public AccountCreationPage selectState(String elementValue) {
         Select stateFormValue = new Select(stateSelect);
         stateFormValue.selectByVisibleText(elementValue);
+        return this;
     }
 
-    @FindBy(id = "id_country")
-    private WebElement countrySelect;
-    public void selectCountry(String elementValue) {
+    public AccountCreationPage selectCountry(String elementValue) {
         Select countryFormValue = new Select(countrySelect);
         countryFormValue.selectByVisibleText(elementValue);
+        return this;
     }
 
-    @FindBy(id = "submitAccount")
-    private WebElement registerButton;
     public void clickOnRegisterButton() {
         registerButton.click();
     }

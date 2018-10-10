@@ -23,7 +23,7 @@ public class AddItemToCartFromBottomMenu extends BaseTest{
         String expectedPrice = "$27.00";
         MenuNavigation menuNavigation = new MenuNavigation(driver);
         menuNavigation.inputIntoSearchField("Blouse");
-        menuNavigation.clickToSubmit();
+        menuNavigation.clickToSubmitSearch();
         switchToListView();
         openProductView();
         String actualPrice = getProductPriceElement().getText();

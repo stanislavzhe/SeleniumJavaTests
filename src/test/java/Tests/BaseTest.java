@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class BaseTest {
-    public static WebDriver driver;
+    public WebDriver driver;
     public static int timeOut = 15;
 
 //    @Parameters("browser")
@@ -37,7 +37,7 @@ public class BaseTest {
 //        driver.get("http://automationpractice.com/index.php");
 //    }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         ChromeDriverManager.chromedriver().setup(); //instead of setProperty
         driver = new ChromeDriver();

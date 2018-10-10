@@ -290,8 +290,8 @@ public class AddressInfoCheck {
         accountCreationPage.typeCustomersFirstName(customersFirstName);
         accountCreationPage.typeCustomersLastName(customersLastName);
         accountCreationPage.typePassword(password);
-        accountCreationPage.typeNewlettersCheckbox();
-        accountCreationPage.typeSpecialOffersCheckbox();
+        accountCreationPage.clickOnNewlettersCheckbox();
+        accountCreationPage.clickOnSpecialOffersCheckbox();
         accountCreationPage.typeFirstNameAddressSection(firstNameAddressSection);
         accountCreationPage.typeLastNameAddressSection(lastNameAddressSection);
         accountCreationPage.typeCompanyName(companyName);
