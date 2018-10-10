@@ -1,7 +1,7 @@
 package HomeWork.lesson4HW;
 
 public class MainPageHW4 {
-//  В проекте создать класс TopMenuNavigation С помощью языка Xpath и CSS селекторов описать локаторы
+//  В проекте создать класс MenuNavigation С помощью языка Xpath и CSS селекторов описать локаторы
 //  для веб элементов на странице http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation
 
     public String homeIconBtnXpath = "//a[@class='home']";

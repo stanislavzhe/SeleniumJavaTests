@@ -5,12 +5,11 @@
     <test name="testing">
         <groups>
             <run>
-                <include name="smoke"/>
+                <include name="positive"/>
             </run>
         </groups>
         <classes>
-            <class name="Tests.Login.LoginSectionTests"/>
-            <class name="Tests.CartTest.DeleteItemWithBiggerPrice"/>
+            <class name="Tests.Catalog.FindItem"/>
         </classes>
     </test>
 </suite>
