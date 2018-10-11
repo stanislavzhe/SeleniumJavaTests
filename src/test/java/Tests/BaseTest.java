@@ -24,7 +24,7 @@ public class BaseTest {
     public static int timeOut = 15;
 
 //    @Parameters("browser")
-//    @BeforeMethod
+//    @BeforeMethod(alwaysRun = true)
 //    public void setUp(@Optional("chrome") String browser) {
 //        if (browser.equals("chrome")){
 //            ChromeDriverManager.chromedriver().setup(); //instead of setProperty

@@ -1,5 +1,7 @@
 package inClass;
 
+import HomeWork.lesson2HomeWork.BankAccount;
+import Tests.BaseTest;
 import com.jayway.restassured.RestAssured;
 import models.Currency;
 import models.User;
@@ -15,7 +17,7 @@ import java.util.List;
 /**
  * Created by Stas on 06.10.2018.
  */
-public class ApiTestPrivatBank {
+public class ApiTestPrivatBank extends BaseTest{
 
     @Test
     public void stringToObjectTest() {
@@ -26,24 +28,16 @@ public class ApiTestPrivatBank {
 //
 //        System.out.println(json);
 
-        ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            // Convert JSON string to Object
-            String jsonInString = "{\"age\":33,\"messages\":[\"msg 1\",\"msg 2\"],\"name\":\"mkyong\"}";
-            User user1 = mapper.readValue(jsonInString, models.User.class);
-            System.out.println(user1);
-            System.out.println(user1.getAge());
-            System.out.println(user1.getMessages());
-            System.out.println(user1.getName());
+        // Convert JSON string to Object
+//        String jsonInString = "{\"ccy\": USD,\"base_ccy\": UAH,\"buy\": 27.90000,\"sale\": 28.15000}";
+//        Currency currency1 = RestAssured.get(jsonInString).as(Currency.class);
+//        System.out.println(currency1);
+//        System.out.println(currency1.getCcy());
+//        System.out.println(currency1.getBase_ccy());
+//        System.out.println(currency1.getBuy());
+//        System.out.println(currency1.getSale());
 
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Test
