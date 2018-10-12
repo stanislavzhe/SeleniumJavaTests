@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,10 +19,12 @@ public class ContactUsPage {
         PageFactory.initElements(driver,this);
     }
 
+    @Step
     public String getContactUsTitle(){
         return contuctUsTitle.getText();
     }
 
+    @Step
     public WebElement attachedFileInputElement(){
         return attachFileInput;
     }

@@ -9,7 +9,6 @@ import pages.MenuNavigation;
 import java.io.File;
 
 public class FileUploadTest extends BaseTest {
-    private WebDriver driver;
 
     @Test
     public void uploadFileTest(){
