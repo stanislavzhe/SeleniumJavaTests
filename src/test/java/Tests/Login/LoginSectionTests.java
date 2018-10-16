@@ -23,6 +23,8 @@ public class LoginSectionTests extends BaseTest {
         Assert.assertEquals(message,actualErrorMessage);
     }
 
+
+
     private LoginPage loginWithInvalidEmailPass(String email, String pass) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.typeEmail(email);
