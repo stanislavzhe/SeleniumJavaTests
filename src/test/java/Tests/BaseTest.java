@@ -45,7 +45,6 @@ public class BaseTest {
         driver.get(config.getProperty("baseURL"));
     }
 
-
     @AfterMethod(alwaysRun = true)
     public void closeDown(ITestResult testResult) throws IOException {
 //        driver.manage().deleteAllCookies();
