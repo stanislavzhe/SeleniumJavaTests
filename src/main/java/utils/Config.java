@@ -1,8 +1,5 @@
 package utils;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
